@@ -7,7 +7,7 @@ function ContactItem({ name, id, number }) {
   const dispatch = useDispatch();
 
   return (
-    <li className="">
+    <li className={style.personName}>
       <p className="">{name}:</p>
       <p>{number}</p>
       <button

@@ -50,7 +50,6 @@ function RegisterView() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log({ name, email, password });
     dispatch(authOperations.registerUser({ name, email, password }));
     setName("");
     setEmail("");
@@ -62,27 +61,35 @@ function RegisterView() {
       <h1>It is RegisterView</h1>
       <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
         <label style={styles.label}>
-          Имя
-          <input type="text" name="name" value={name} onChange={handleChange} />
+          Имя*
+          <input
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
+            required
+          />
         </label>
 
         <label style={styles.label}>
-          Почта
+          Почта*
           <input
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
+            required
           />
         </label>
 
         <label style={styles.label}>
-          Пароль
+          Пароль*
           <input
             type="password"
             name="password"
             value={password}
             onChange={handleChange}
+            required
           />
         </label>
 

@@ -11,8 +11,8 @@
 
 .formBtn {
   width: 75px;
-  background-color: rgb(173, 173, 202);
+  background-color: rgb(197, 197, 233);
 }
 .formBtn:hover:focus {
-  background-color: rgb(212, 184, 130);
+  background-color: rgb(255, 235, 196);
 }

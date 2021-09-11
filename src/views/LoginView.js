@@ -54,22 +54,24 @@ function LoginView() {
       <h1>It is LoginView</h1>
       <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
         <label style={styles.label}>
-          Почта
+          Почта*
           <input
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
+            required
           />
         </label>
 
         <label style={styles.label}>
-          Пароль
+          Пароль*
           <input
             type="password"
             name="password"
             value={password}
             onChange={handleChange}
+            required
           />
         </label>
 

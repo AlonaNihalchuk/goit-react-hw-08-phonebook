@@ -2,5 +2,8 @@
   background-color: rgb(240, 180, 180);
 }
 .contactsButton:hover:focus {
-  background-color: rgb(236, 125, 125);
+  background-color: rgb(255, 197, 197);
+}
+.personName {
+  margin-top: 20px;
 }

@@ -5,7 +5,7 @@ import UserMenu from "../UserMenu/UserMenu";
 import AuthNav from "../AuthNav/AuthNav";
 
 function AppBar() {
-  const isLoggedIn = useSelector(authSelectors.getIsisLoggedIn);
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
   const styles = {
     header: {
@@ -21,7 +21,7 @@ function AppBar() {
       <Navigation />
       {/* <UserMenu />
       <AuthNav /> */}
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}/
+      {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </header>
   );
 }

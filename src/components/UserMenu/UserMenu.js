@@ -24,7 +24,7 @@ function UserMenu() {
   };
 
   return (
-    <div>
+    <div style={styles.container}>
       <img src={avatar} alt="" width="32" style={styles.avatar} />
       <img alt="" width="32" style={styles.avatar} />
 
