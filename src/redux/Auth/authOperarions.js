@@ -64,4 +64,3 @@ export const refreshUser = createAsyncThunk(
     } catch (error) {}
   }
 );
-// export default registerUser;
