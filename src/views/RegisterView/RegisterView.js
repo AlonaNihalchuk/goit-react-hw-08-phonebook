@@ -3,20 +3,33 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styles from "./RegisterView.module.css";
 import { Button } from "@material-ui/core";
-import IconButton from "@material-ui/core/IconButton";
-import DeleteIcon from "@material-ui/icons/Delete";
-import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
+// import DeleteIcon from "@material-ui/icons/Delete";
 import { makeStyles } from "@material-ui/core/styles";
-// import SaveIcon from "@material-ui/icons/Save";
-import SaveAltIcon from "@material-ui/icons/SaveAlt";
-// import AddBoxIcon from "@material-ui/icons/AddBox";
+import TextField from "@material-ui/core/TextField";
+import clsx from "clsx";
+
+// const useStyles = makeStyles((theme) => ({
+//   margin: {
+//     margin: theme.spacing(1),
+//   },
+//   extendedIcon: {
+//     marginRight: theme.spacing(1),
+//   },
+// }));
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    marginBottom: 15,
+    width: 320,
+  },
   margin: {
     margin: theme.spacing(1),
   },
-  extendedIcon: {
-    marginRight: theme.spacing(1),
+  button: {
+    width: 100,
+    margin: theme.spacing(1),
   },
 }));
 
@@ -50,14 +63,54 @@ function RegisterView() {
   };
 
   return (
-    <>
-      <h1>It is RegisterView</h1>
+    <div className={styles.container}>
+      <h1 className={styles.header}>It is RegisterView</h1>
       <form
         onSubmit={handleSubmit}
-        className={styles.registerForm}
+        className={classes.root}
+        // className={styles.registerForm}
         autoComplete="off"
       >
-        <label className={styles.registerLabel}>
+        {/* <form
+        className={classes.root}
+        noValidate
+        autoComplete="off"
+        onSubmit={handleSubmit}
+      > */}
+        <TextField
+          className={clsx(classes.margin)}
+          id="outlined-basic"
+          label="Name"
+          variant="outlined"
+          type="text"
+          name="name"
+          value={name}
+          onChange={handleChange}
+          required
+        />
+        <TextField
+          className={clsx(classes.margin)}
+          id="outlined-basic2"
+          label="Email"
+          variant="outlined"
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleChange}
+          required
+        />
+        <TextField
+          className={clsx(classes.margin)}
+          id="outlined-basic3"
+          label="Password"
+          variant="outlined"
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleChange}
+          required
+        />
+        {/* <label className={styles.registerLabel}>
           Name*
           <input
             type="text"
@@ -88,47 +141,26 @@ function RegisterView() {
             onChange={handleChange}
             required
           />
-        </label>
-
-        {/* <button type="submit">Зарегистрироваться</button> */}
-        <Button type="submit" variant="contained" size="medium">
+        </label> */}
+        <Button
+          type="submit"
+          variant="contained"
+          size="medium"
+          className={classes.button}
+        >
           Sign up
         </Button>
-        <Button variant="contained" color="secondary">
-          Secondary
-        </Button>
-        <Button variant="contained" color="primary">
-          Primary
-        </Button>
-        <IconButton aria-label="delete" className={classes.margin} size="small">
-          <ArrowDownwardIcon fontSize="inherit" />
-        </IconButton>
-        <IconButton
-          aria-label="delete"
-          className={classes.margin}
-          color="secondary"
-        >
-          <DeleteIcon fontSize="small" />
-        </IconButton>
-        <Button
+
+        {/* <Button
           variant="contained"
           color="secondary"
           className={classes.button}
           startIcon={<DeleteIcon />}
         >
           Delete
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          size="small"
-          className={classes.button}
-          startIcon={<SaveAltIcon />}
-        >
-          Save
-        </Button>
+        </Button> */}
       </form>
-    </>
+    </div>
   );
 }
 export default RegisterView;
