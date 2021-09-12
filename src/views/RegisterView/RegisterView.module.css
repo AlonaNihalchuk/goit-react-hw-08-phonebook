@@ -1,0 +1,8 @@
+.registerForm {
+  width: 320px;
+}
+.registerLabel {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}

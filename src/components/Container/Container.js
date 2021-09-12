@@ -1,5 +1,4 @@
 import React from "react";
-// import "./Container.scss";
 import style from "./Container.module.css";
 
 const Container = ({ children }) => (

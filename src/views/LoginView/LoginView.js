@@ -1,22 +1,12 @@
-import * as authOperations from "../redux/Auth/authOperarions";
+import * as authOperations from "../../redux/Auth/authOperarions";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import styles from "./LoginView.module.css";
 
 function LoginView() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-
-  const styles = {
-    form: {
-      width: 320,
-    },
-    label: {
-      display: "flex",
-      flexDirection: "column",
-      marginBottom: 15,
-    },
-  };
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -31,17 +21,6 @@ function LoginView() {
     }
   };
 
-  // const handleChange = (e) => {
-  //   switch (e.target.name) {
-  //     case "email":
-  //       return setEmail(e.target.value);
-  //     case "password":
-  //       return setPassword(e.target.value);
-  //     default:
-  //       return;
-  //   }
-  // };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(authOperations.loginUser({ email, password }));
@@ -52,8 +31,12 @@ function LoginView() {
   return (
     <>
       <h1>It is LoginView</h1>
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
+      <form
+        onSubmit={handleSubmit}
+        className={styles.loginForm}
+        autoComplete="off"
+      >
+        <label className={styles.loginLabel}>
           Почта*
           <input
             type="email"
@@ -64,7 +47,7 @@ function LoginView() {
           />
         </label>
 
-        <label style={styles.label}>
+        <label className={styles.loginLabel}>
           Пароль*
           <input
             type="password"

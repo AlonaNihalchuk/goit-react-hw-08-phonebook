@@ -1,6 +1,7 @@
-import * as authOperations from "../redux/Auth/authOperarions";
+import * as authOperations from "../../redux/Auth/authOperarions";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import styles from "./RegisterView.module.css";
 
 function RegisterView() {
   const [name, setName] = useState("");
@@ -8,45 +9,18 @@ function RegisterView() {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
-  const styles = {
-    form: {
-      width: 320,
-    },
-    label: {
-      display: "flex",
-      flexDirection: "column",
-      marginBottom: 15,
-    },
-  };
-
-  const handleChange = ({ target: { name, value } }) => {
-    switch (name) {
+  const handleChange = (e) => {
+    switch (e.target.name) {
       case "name":
-        setName(value);
-        break;
+        return setName(e.target.value);
       case "email":
-        setEmail(value);
-        break;
+        return setEmail(e.target.value);
       case "password":
-        setPassword(value);
-        break;
+        return setPassword(e.target.value);
       default:
         return;
     }
   };
-
-  // const handleChange = (e) => {
-  //   switch (e.target.name) {
-  //     case "name":
-  //       return setName(e.target.value);
-  //     case "email":
-  //       return setEmail(e.target.value);
-  //     case "password":
-  //       return setPassword(e.target.value);
-  //     default:
-  //       return;
-  //   }
-  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -59,8 +33,12 @@ function RegisterView() {
   return (
     <>
       <h1>It is RegisterView</h1>
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
+      <form
+        onSubmit={handleSubmit}
+        className={styles.registerForm}
+        autoComplete="off"
+      >
+        <label className={styles.registerLabel}>
           Имя*
           <input
             type="text"
@@ -71,7 +49,7 @@ function RegisterView() {
           />
         </label>
 
-        <label style={styles.label}>
+        <label className={styles.registerLabel}>
           Почта*
           <input
             type="email"
@@ -82,7 +60,7 @@ function RegisterView() {
           />
         </label>
 
-        <label style={styles.label}>
+        <label className={styles.registerLabel}>
           Пароль*
           <input
             type="password"

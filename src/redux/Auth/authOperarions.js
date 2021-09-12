@@ -18,11 +18,8 @@ export const registerUser = createAsyncThunk(
     try {
       const { data } = await axios.post("/users/signup", credentials);
       token.set(data.token);
-      // console.log(credentials);
       return data;
-    } catch (error) {
-      //   return error.message;
-    }
+    } catch (error) {}
   }
 );
 export const loginUser = createAsyncThunk("auth/login", async (credentials) => {
@@ -31,9 +28,7 @@ export const loginUser = createAsyncThunk("auth/login", async (credentials) => {
     token.set(data.token);
     console.log(data);
     return data;
-  } catch (error) {
-    //   return error.message;
-  }
+  } catch (error) {}
 });
 
 export const logoutUser = createAsyncThunk("auth/logout", async () => {
@@ -41,9 +36,7 @@ export const logoutUser = createAsyncThunk("auth/logout", async () => {
     const { data } = await axios.post("/users/logout");
     token.unset();
     return data;
-  } catch (error) {
-    //   return error.message;
-  }
+  } catch (error) {}
 });
 
 export const refreshUser = createAsyncThunk(
@@ -52,14 +45,12 @@ export const refreshUser = createAsyncThunk(
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
     // console.log(thunkAPI.getState());
-    // console.log(persistedToken);
     if (persistedToken === null) {
       return thunkAPI.rejectWithValue();
     }
     token.set(persistedToken);
     try {
       const { data } = await axios.get("/users/current");
-      // console.log(data);
       return data;
     } catch (error) {}
   }
