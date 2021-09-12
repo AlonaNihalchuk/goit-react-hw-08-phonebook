@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/views/HomeView/HomeView.module.css"],"names":[],"mappings":"AAAA,4BACE,iBACF","file":"HomeView.f8b5d401.chunk.css","sourcesContent":[".homeHeader {\n  text-align: center;\n}\n"]}
