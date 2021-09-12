@@ -1,6 +1,7 @@
+import React from "react";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import style from "./Form.module.css";
+// import style from "./Form.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getContacts } from "../../redux/contacts/selectors";
 import { addContactOperacion } from "../../redux/contacts/operations";
@@ -8,14 +9,16 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import PhoneIcon from "@material-ui/icons/Phone";
 import { Button } from "@material-ui/core";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
-
-// import React from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    "& .MuiTextField-root": {
+      margin: theme.spacing(1),
+      // width: 200,
+    },
     display: "flex",
     flexDirection: "column",
     marginBottom: 15,
@@ -80,6 +83,7 @@ function Form() {
   return (
     <form className={classes.root} autoComplete="off" onSubmit={handleSubmit}>
       <TextField
+        helperText="Name"
         required
         className={clsx(classes.margin)}
         id="outlined-basic"
@@ -93,6 +97,7 @@ function Form() {
         title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
       />
       <TextField
+        helperText="Phone"
         required
         className={clsx(classes.margin)}
         id="outlined-basic2"
@@ -105,9 +110,6 @@ function Form() {
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
         title="Номер телефона должен состоять из цифер и может содержать пробелы, тире, круглые скобки и может начинаться с +"
       />
-      {/* <Button variant="contained" type="submit" className={classes.button}>
-        Save
-      </Button> */}
       <Button
         type="submit"
         variant="contained"
@@ -123,25 +125,25 @@ function Form() {
     //   <label className={style.formLabel}>
     //     Name <AccountCircleIcon />
     //     <input
-    //       onChange={handleNameChange}
-    //       value={name}
-    //       type="text"
-    //       name="name"
-    //       pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-    //       title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-    //       required
+    // onChange={handleNameChange}
+    // value={name}
+    // type="text"
+    // name="name"
+    // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+    // title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+    // required
     //     />
     //   </label>
     //   <label className={style.formLabel}>
     //     Phone <PhoneIcon />
     //     <input
-    //       onChange={handleNameChange}
-    //       value={number}
-    //       type="tel"
-    //       name="number"
-    //       pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-    //       title="Номер телефона должен состоять из цифер и может содержать пробелы, тире, круглые скобки и может начинаться с +"
-    //       required
+    // onChange={handleNameChange}
+    // value={number}
+    // type="tel"
+    // name="number"
+    // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+    // title="Номер телефона должен состоять из цифер и может содержать пробелы, тире, круглые скобки и может начинаться с +"
+    // required
     //     />
     //   </label>
     //   <button type="submit" className={style.formBtn}>
