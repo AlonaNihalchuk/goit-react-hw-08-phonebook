@@ -15,7 +15,7 @@ function Navigation() {
         className={styles.link}
         activeClassName={styles.activeLink}
       >
-        Главная
+        Home
       </NavLink>
 
       {isLoggedIn && (
@@ -25,7 +25,7 @@ function Navigation() {
           className={styles.link}
           activeClassName={styles.activeLink}
         >
-          Контакты
+          Contacts
         </NavLink>
       )}
     </nav>

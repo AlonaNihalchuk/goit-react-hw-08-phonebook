@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Switch, Redirect } from "react-router-dom";
 
-import Container from "../Container/Container";
+import Section from "../Section/Section";
 import AppBar from "../AppBar/AppBar";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -39,26 +39,28 @@ function App() {
 
   return (
     !isBeingLoggedIn && (
-      <Container>
+      <>
         <AppBar />
         <Suspense fallback={<h1>LOADING...</h1>}>
           <Switch>
-            <PublicRoute path="/" exact>
-              <HomeView />
-            </PublicRoute>
-            <PublicRoute path="/register" restricted>
-              <RegisterView />
-            </PublicRoute>
-            <PublicRoute path="/login" restricted redirectTo="/contacts">
-              <LoginView />
-            </PublicRoute>
-            <PrivateRoute path="/contacts" redirectTo="/login">
-              <ContactsView />
-            </PrivateRoute>
-            <Redirect to="/" />
+            <Section>
+              <PublicRoute path="/" exact>
+                <HomeView />
+              </PublicRoute>
+              <PublicRoute path="/register" restricted>
+                <RegisterView />
+              </PublicRoute>
+              <PublicRoute path="/login" restricted redirectTo="/contacts">
+                <LoginView />
+              </PublicRoute>
+              <PrivateRoute path="/contacts" redirectTo="/login">
+                <ContactsView />
+              </PrivateRoute>
+              <Redirect to="/" />
+            </Section>
           </Switch>
         </Suspense>
-      </Container>
+      </>
     )
   );
 }

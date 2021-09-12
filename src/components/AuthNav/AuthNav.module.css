@@ -3,8 +3,8 @@
   text-decoration: none;
   padding: 12px;
   font-weight: 700;
-  color: #2a363b;
+  color: hsl(195, 17%, 95%);
 }
 .activeLink {
-  color: #e84a5f;
+  color: #f68a98;
 }

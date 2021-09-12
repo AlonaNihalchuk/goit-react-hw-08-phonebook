@@ -2,6 +2,7 @@ import * as authOperations from "../../redux/Auth/authOperarions";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import styles from "./LoginView.module.css";
+import { Button } from "@material-ui/core";
 
 function LoginView() {
   const [email, setEmail] = useState("");
@@ -29,15 +30,15 @@ function LoginView() {
   };
 
   return (
-    <>
-      <h1>It is LoginView</h1>
+    <div className={styles.container}>
+      <h1>Please Login</h1>
       <form
         onSubmit={handleSubmit}
         className={styles.loginForm}
         autoComplete="off"
       >
         <label className={styles.loginLabel}>
-          Почта*
+          Email*
           <input
             type="email"
             name="email"
@@ -48,7 +49,7 @@ function LoginView() {
         </label>
 
         <label className={styles.loginLabel}>
-          Пароль*
+          Password*
           <input
             type="password"
             name="password"
@@ -57,10 +58,11 @@ function LoginView() {
             required
           />
         </label>
-
-        <button type="submit">Войти</button>
+        <Button variant="contained" type="submit">
+          login
+        </Button>
       </form>
-    </>
+    </div>
   );
 }
 export default LoginView;
