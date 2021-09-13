@@ -16,7 +16,6 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
 import FolderIcon from "@material-ui/icons/Folder";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { makeStyles } from "@material-ui/core/styles";
@@ -77,9 +76,9 @@ function ContactItem({ name, id, number }) {
     </ListItem>
     // <div>
     //   <Grid item xs={12} md={6}>
-    //     <Typography variant="h6" className={classes.title}>
-    //       Person
-    //     </Typography>
+    // <Typography variant="h6" className={classes.title}>
+    //   Person
+    // </Typography>
     //     <div className={classes.demo}>
     //       <List dense={name}>
     //         {generate(

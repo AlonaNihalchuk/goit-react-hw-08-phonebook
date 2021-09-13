@@ -28,7 +28,9 @@ export const loginUser = createAsyncThunk("auth/login", async (credentials) => {
     token.set(data.token);
     console.log(data);
     return data;
-  } catch (error) {}
+  } catch (error) {
+    return Promise.reject(new Error("something went wrong"));
+  }
 });
 
 export const logoutUser = createAsyncThunk("auth/logout", async () => {

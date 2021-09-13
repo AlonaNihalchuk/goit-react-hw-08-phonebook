@@ -64,7 +64,7 @@ function RegisterView() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.header}>It is RegisterView</h1>
+      <h1 className={styles.header}>Please sign up</h1>
       <form
         onSubmit={handleSubmit}
         className={classes.root}
