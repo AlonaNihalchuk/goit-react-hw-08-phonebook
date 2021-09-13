@@ -3,26 +3,16 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styles from "./RegisterView.module.css";
 import { Button } from "@material-ui/core";
-// import DeleteIcon from "@material-ui/icons/Delete";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import clsx from "clsx";
-
-// const useStyles = makeStyles((theme) => ({
-//   margin: {
-//     margin: theme.spacing(1),
-//   },
-//   extendedIcon: {
-//     marginRight: theme.spacing(1),
-//   },
-// }));
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
     marginBottom: 15,
-    width: 320,
+    width: 340,
   },
   margin: {
     margin: theme.spacing(1),
@@ -65,19 +55,9 @@ function RegisterView() {
   return (
     <div className={styles.container}>
       <h1 className={styles.header}>Please sign up</h1>
-      <form
-        onSubmit={handleSubmit}
-        className={classes.root}
-        // className={styles.registerForm}
-        autoComplete="off"
-      >
-        {/* <form
-        className={classes.root}
-        noValidate
-        autoComplete="off"
-        onSubmit={handleSubmit}
-      > */}
+      <form onSubmit={handleSubmit} className={classes.root} autoComplete="off">
         <TextField
+          fullWidth
           className={clsx(classes.margin)}
           id="outlined-basic"
           label="Name"
@@ -89,6 +69,7 @@ function RegisterView() {
           required
         />
         <TextField
+          fullWidth
           className={clsx(classes.margin)}
           id="outlined-basic2"
           label="Email"
@@ -100,6 +81,7 @@ function RegisterView() {
           required
         />
         <TextField
+          fullWidth
           className={clsx(classes.margin)}
           id="outlined-basic3"
           label="Password"
@@ -110,38 +92,7 @@ function RegisterView() {
           onChange={handleChange}
           required
         />
-        {/* <label className={styles.registerLabel}>
-          Name*
-          <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={handleChange}
-            required
-          />
-        </label>
 
-        <label className={styles.registerLabel}>
-          Email*
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-            required
-          />
-        </label>
-
-        <label className={styles.registerLabel}>
-          Password*
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-            required
-          />
-        </label> */}
         <Button
           type="submit"
           variant="contained"
@@ -150,15 +101,6 @@ function RegisterView() {
         >
           Sign up
         </Button>
-
-        {/* <Button
-          variant="contained"
-          color="secondary"
-          className={classes.button}
-          startIcon={<DeleteIcon />}
-        >
-          Delete
-        </Button> */}
       </form>
     </div>
   );

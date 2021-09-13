@@ -13,17 +13,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
-    marginBottom: 15,
-    width: 320,
+    width: 340,
   },
   margin: {
     margin: theme.spacing(1),
-  },
-  withoutLabel: {
-    marginTop: theme.spacing(3),
-  },
-  textField: {
-    width: "25ch",
   },
   button: {
     width: 100,
@@ -63,6 +56,7 @@ function LoginView() {
       <h1 className={styles.header}>Please Login</h1>
       <form className={classes.root} autoComplete="off" onSubmit={handleSubmit}>
         <TextField
+          fullWidth
           className={clsx(classes.margin)}
           id="outlined-basic"
           label="Email"
@@ -74,6 +68,7 @@ function LoginView() {
           required
         />
         <TextField
+          fullWidth
           className={clsx(classes.margin)}
           id="outlined-basic2"
           label="Password"

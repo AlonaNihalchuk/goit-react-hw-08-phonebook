@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-// import style from "./Form.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getContacts } from "../../redux/contacts/selectors";
 import { addContactOperacion } from "../../redux/contacts/operations";
@@ -17,24 +16,16 @@ const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
       margin: theme.spacing(1),
-      // width: 200,
     },
     display: "flex",
     flexDirection: "column",
-    marginBottom: 15,
-    width: 320,
+    width: 340,
   },
   margin: {
     margin: theme.spacing(1),
   },
-  withoutLabel: {
-    marginTop: theme.spacing(3),
-  },
-  textField: {
-    width: "25ch",
-  },
   button: {
-    width: 100,
+    width: 120,
     margin: theme.spacing(1),
   },
 }));
@@ -83,6 +74,7 @@ function Form() {
   return (
     <form className={classes.root} autoComplete="off" onSubmit={handleSubmit}>
       <TextField
+        fullWidth
         helperText="Name"
         className={clsx(classes.margin)}
         id="outlined-basic"
@@ -96,6 +88,7 @@ function Form() {
         title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
       />
       <TextField
+        fullWidth
         helperText="Phone"
         className={clsx(classes.margin)}
         id="outlined-basic2"
@@ -112,42 +105,12 @@ function Form() {
         type="submit"
         variant="contained"
         color="primary"
-        size="small"
         className={classes.button}
         startIcon={<SaveAltIcon />}
       >
         Save
       </Button>
     </form>
-    // <form onSubmit={handleSubmit} className={style.formSection}>
-    //   <label className={style.formLabel}>
-    //     Name <AccountCircleIcon />
-    //     <input
-    // onChange={handleNameChange}
-    // value={name}
-    // type="text"
-    // name="name"
-    // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-    // title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-    // required
-    //     />
-    //   </label>
-    //   <label className={style.formLabel}>
-    //     Phone <PhoneIcon />
-    //     <input
-    // onChange={handleNameChange}
-    // value={number}
-    // type="tel"
-    // name="number"
-    // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-    // title="Номер телефона должен состоять из цифер и может содержать пробелы, тире, круглые скобки и может начинаться с +"
-    // required
-    //     />
-    //   </label>
-    //   <button type="submit" className={style.formBtn}>
-    //     Save
-    //   </button>
-    // </form>
   );
 }
 

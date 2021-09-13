@@ -7,7 +7,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    margin: `${theme.spacing.unit * 4}px 0 ${theme.spacing.unit * 2}px`,
+    marginTop: 50,
+    marginLeft: 10,
+    marginBottom: 10,
   },
 }));
 
@@ -17,12 +19,11 @@ function ContactsView() {
   return (
     <section className={s.phonebook}>
       <Typography variant="h4" className={classes.title}>
-        {/* Phonebook */}
-        <h1 className={s.phonebookHeader}>Phonebook</h1>
+        Phonebook
       </Typography>
       <Form />
-      <Typography variant="h5" className={classes.title}>
-        <h2 className={s.contactsHead}>Contacts </h2>
+      <Typography variant="h4" className={classes.title}>
+        Contacts
       </Typography>
 
       <Filter />

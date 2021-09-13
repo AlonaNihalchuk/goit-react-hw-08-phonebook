@@ -1,6 +1,5 @@
 import { lazy, Suspense } from "react";
 import { Switch, Redirect } from "react-router-dom";
-
 import Section from "../Section/Section";
 import AppBar from "../AppBar/AppBar";
 import { useSelector, useDispatch } from "react-redux";

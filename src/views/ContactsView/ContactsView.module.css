@@ -1,10 +1,6 @@
-.contactsHead {
-  margin-top: 50px;
-  margin-left: 10px;
-}
 .phonebook {
-  margin-top: 50px;
-  width: 320px;
+  padding: 5px;
+  max-width: 355px;
   margin-left: auto;
   margin-right: auto;
 }
