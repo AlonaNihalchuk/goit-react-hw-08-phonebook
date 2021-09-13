@@ -84,7 +84,6 @@ function Form() {
     <form className={classes.root} autoComplete="off" onSubmit={handleSubmit}>
       <TextField
         helperText="Name"
-        required
         className={clsx(classes.margin)}
         id="outlined-basic"
         label={<AccountCircleIcon />}
@@ -98,7 +97,6 @@ function Form() {
       />
       <TextField
         helperText="Phone"
-        required
         className={clsx(classes.margin)}
         id="outlined-basic2"
         label={<PhoneIcon />}
