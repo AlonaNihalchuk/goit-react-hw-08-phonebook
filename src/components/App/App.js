@@ -43,7 +43,7 @@ function App() {
         <Suspense fallback={<h1>LOADING...</h1>}>
           <Switch>
             <Section>
-              <PublicRoute path="/" exact>
+              <PublicRoute exact path="/">
                 <HomeView />
               </PublicRoute>
               <PublicRoute path="/register" restricted>
@@ -55,7 +55,6 @@ function App() {
               <PrivateRoute path="/contacts" redirectTo="/login">
                 <ContactsView />
               </PrivateRoute>
-              <Redirect to="/" />
             </Section>
           </Switch>
         </Suspense>
